@@ -1,0 +1,519 @@
+body{
+  margin: 0;
+  
+}
+.container{
+  
+  height: 100%;
+
+
+}
+
+.container-centro{
+  background: whitesmoke;
+  height: 100%;
+  padding: 70px 0px;
+
+}
+
+
+
+.container-footer{
+  height: 80px;
+  align-items: center;
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+}
+
+
+.container-header{
+  height: 115px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+} 
+
+.icons{
+  color: #cec7c7;
+}
+
+.logo{
+  width: 70px;
+  height: 70px;
+}
+
+
+/* centro layout */
+
+   .container-layout-peliculas {
+      display: grid;
+      /* para que mis columnas respeten al espacio que tiene disponible aplico auto-fill (una manera de resposivear)
+      y si no tiene espacio a los costados se apilaran de bajada */
+      grid-template-columns: repeat(auto-fill, 250px);
+      grid-gap: 30px;
+      justify-content: center;
+    }
+    .item {
+      border-radius: 5px;
+      /* padding: 10px; */
+      background: white; 
+      box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.3);
+    }
+    .item img {
+    /* max-width: 100%; */
+      width: 100%;
+      object-fit: cover;
+    }
+    .level-1 {
+      grid-row-end: span 3;
+    }
+    .level-2 {
+      grid-row-end: span 3;
+    }
+    .level-3 {
+      grid-row-end: span 3;
+    }
+
+
+    .container-pelicula{
+    padding: 15px;
+    }
+
+    .rating-button-detalle{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .button-detalle{
+      background: #fab005;
+      padding: 3px 8px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1;
+    }
+    label{
+      cursor: pointer;
+      font-family: 'GothamRounded-Medium';
+      font-size: 14px;
+      color: #212529;
+    }
+    
+    .modal .cerrar-modal::before{
+      content: "X";
+      display: flex;
+      font-size: 15px;
+      padding: 8px 8px 0px;
+      color: #acacb3;
+}
+
+
+    .genero{
+      color: #fab005;
+      font-family: 'GothamRounded-Medium';
+      font-size: 13px;
+      margin-top: 0;
+    }
+
+    .nombre-pelicula{
+      margin: 0;
+      color: #212529;
+      font-family: 'GothamRounded-Medium';
+      font-size: 16px;
+
+    }
+
+    .incono-rating{
+      width: 25px;
+      height: 25px;
+    }
+
+
+
+    .rating-numero{
+      font-family: 'GothamRounded-Medium';
+      font-size: 21px;
+      position: absolute;
+      margin-left: 5px;
+      color: #212529;
+    }
+
+    .rating{
+      display: inline-table;
+    }
+
+@font-face {
+    font-family: 'GothamRounded-Bold';
+    src: url('../resources/Font/GothamRounded-Bold.ttf');
+
+}
+
+@font-face {
+    font-family: 'GothamRounded-Book';
+    src: url('../resources/Font/GothamRounded-Book.ttf');
+
+}
+
+@font-face {
+    font-family: 'GothamRounded-Light';
+    src: url('../resources/Font/GothamRounded-Light.ttf');
+
+}
+
+@font-face {
+    font-family: 'GothamRounded-Medium';
+    src: url('../resources/Font/GothamRounded-Medium.ttf');
+
+}
+
+
+
+
+    /* MODAL */
+
+
+.pop {
+  position: absolute;
+
+  /* height: 70%;
+  width: 60%; */
+  width: 800px;
+  height: 500px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+/* contenido-modal */
+
+.imagen-pelicula-popup{
+  width: 40%;
+  height: 100%;
+}
+
+.imagen-pelicula-popup img{
+  width: 100%;
+  height: 100%;
+}
+
+
+.detalle-pelicula-popup{
+  width: 60%
+}
+
+.pop input:checked + .modal .cerrar-modal::before:hover {
+  background:  red;
+}
+
+.icono-fecha {
+    width: 40px;
+    height: 40px;
+}
+
+
+/* TABLETS */
+
+
+@media (max-width: 640px) {
+  .pop {
+    position: absolute;
+    width: 100%;
+  }
+}
+.pop .modal {
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 500ms ease-in-out;
+}
+.pop .modal__inner {
+  -webkit-transform: translate(-50%, -50%) scale(0.75);
+          transform: translate(-50%, -50%) scale(0.75);
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 500px;
+  background: white;
+  position: absolute;
+  color: black;
+  border-top-right-radius: 5px;
+  display: flex;
+}
+
+.sinopsis-pelicula-popup .fecha-pelicula{
+  cursor: pointer;
+  font-family: 'GothamRounded-Medium';
+  font-size: 14px;
+  background: black;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 60px;
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.info-pelicula-popup{
+    height: 55%;
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    float: right;}
+
+.sinopsis-pelicula-popup{
+  height: 45%;
+}
+
+.sinopsis-pelicula-popup p{
+  font-family: 'GothamRounded-Book';
+  font-size: 16px;
+  margin: 0;
+  color: #212529;
+
+}
+
+.container-icon-popup{
+  text-align: center;
+}
+
+.container-info-pelicula-popup{
+  width: 480px;
+  height: 200px;
+  border-radius: 5px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.3);
+  padding: 15px;
+}
+
+.container-rating-popularity-votes-popup{
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-titulo-popup{
+  padding-bottom: 10px;
+  border-bottom: 1px solid #acacb3;
+}
+
+.titulo-popup{
+  font-family: 'GothamRounded-Medium';
+  font-size: 23px;
+  color: #212529;
+}
+
+.genero-popup{
+  font-family: 'GothamRounded-Book';
+  font-size: 14px;
+  color: #f59f00;
+}
+
+.numero-popup{
+  font-family: 'GothamRounded-Book';
+  font-size: 23px;
+  color: #212529;
+}
+
+.idioma-popup{
+  font-family: 'GothamRounded-Medium';
+    font-size: 14px;
+    color: #212529;
+    background: #acacb3;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.fecha-popup{
+  font-family: 'GothamRounded-Medium';
+  font-size: 18px;
+  color: #FFFFFF;
+
+}
+
+.tamaño-iconos{
+  width: 20px;
+}
+
+.nombre-icono-popup{
+  font-family: 'GothamRounded-Light';
+  font-size: 14px;
+  color: #acacb3;
+
+}
+
+
+.container-genero-idioma{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+
+
+
+
+@media (max-width: 640px) {
+  .pop .modal__inner {
+    width: 100%;
+  }
+}
+.pop .cerrar-modal {
+  display: inline-block;
+  cursor: pointer;
+}
+.pop .cerrar-modal.open {
+  color: turquoise;
+  transition: color 200ms ease-in-out;
+  text-decoration: underline;
+}
+.pop .cerrar-modal.open:hover {
+  color: paleturquoise;
+}
+.pop input {
+  display: none;
+}
+.pop input:checked + .modal {
+  opacity: 1;
+  z-index: +1;
+  visibility: visible;
+}
+.pop input:checked + .modal .modal__inner {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  transition: all 200ms ease-in-out;
+}
+.pop input:checked + .modal .modal__inner p {
+  padding: 20px;
+}
+.pop input:checked + .modal .cerrar-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  width: 30px;
+  transition: all 200ms ease-in-out;
+}
+
+
+
+/* celulares */
+
+@media (max-width: 375px) {
+
+/* .pop input:checked + */ 
+.modal .modal__inner {
+    width: 330px;
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 5px;
+}
+
+.modal .modal__inner p {
+    padding: 20px;
+    /* width: 60%; */
+    font-size: 12px;
+}
+
+.info-pelicula-popup {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-right: 0;
+}
+
+.sinopsis-pelicula-popup {
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.imagen-pelicula-popup img {
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    height: auto;
+    border-bottom-right-radius: 5px;
+    padding-bottom: 40px;
+}
+
+.detalle-pelicula-popup {
+    width: 60%;
+}
+
+.imagen-pelicula-popup {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.container-info-pelicula-popup {
+    width: 270px;
+    height: 170px;
+    border-radius: 5px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.3);
+    padding: 15px;
+}
+.sinopsis-pelicula-popup {
+    height: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.sinopsis-pelicula-popup .fecha-pelicula {
+
+    height: 30px;
+    width: 100px;
+    border-bottom-right-radius: 5px;
+
+}
+
+.icono-fecha {
+    width: 15px;
+    height: 15px;
+}
+
+.fecha-popup {
+    font-size: 12px;
+}
+
+}
+
+.tamaño-iconos {
+    width: 15px;
+}
+
+.numero-popup {
+    font-size: 20px;
+    
+}
+
+.nombre-icono-popup {
+    font-size: 11px;
+    
+}
